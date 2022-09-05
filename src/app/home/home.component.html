@@ -1,0 +1,20 @@
+<h1 class="text-center">Bienvenido Ricardo</h1>
+<h2 class="text-center ">Lista de actividades</h2>
+<div class="container panel panel-default">
+    <div class="row">
+        <div class="col-sm-6 x ">
+            <h3 class="">Actividades Pendientes</h3>
+            <p  *ngFor="let actividad of actividades, let i = index" class=" container-actPendiente alert alert-info">{{i+1}}. {{ actividad}}
+                <span (click)="actTerminada(i,actividad)" class=" btn btn-success "> Echo 
+                    <i class="fa fa-check"></i>
+                </span>
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <h3 class="success">Actividades realizadas</h3>
+            <p *ngFor="let actividad of actividadesEchas" class="alert alert-success">{{actividad}}</p>
+        </div>
+        <app-add-actividad (agregarActividad)="nuevaAct($event)"></app-add-actividad>
+    </div>
+
+</div>
